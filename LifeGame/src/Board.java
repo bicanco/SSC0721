@@ -38,16 +38,18 @@ public class Board {
 		return sum;
 	}
 	
-	protected int nextCellState(int i, int j) {
+	protected int nextCellState(int i, int j) throws Exception {
 		int nAlive = numNeighborsAlive(i, j);
 		if ((board[i][j] == 1) && (nAlive < 2 || nAlive > 3))
 			return 0;
 		if ((board[i][j] == 0) && (nAlive == 3))
 			return 1;
+		if(board[i][j] <= -1 || board[i][j] >= 2)
+			throw new Exception("Valor não permitido");
 		return board[i][j];
 	}
 	
-	public Board nextBoardState() {
+	public Board nextBoardState() throws Exception {
 		int[][] newBoard = new int[boardSize][boardSize];
 
 		for (int i = 0; i < boardSize; i++) {

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Board board = new Board();
 		board.print();
         System.out.println("Aperte enter para a próxima geração.");

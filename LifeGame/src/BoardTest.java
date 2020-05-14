@@ -68,6 +68,8 @@ public class BoardTest extends Board {
     		{ 2, 2, 0, new int[][] {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,1,0,1,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}, true},
     		{ 2, 2, 1, new int[][] {{0,0,0,0,0,0},{0,0,1,0,0,0},{0,1,0,1,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}, true},
     		{ 2, 2, 0, new int[][] {{0,0,0,0,0,0},{0,0,1,0,0,0},{0,1,0,1,0,0},{0,0,1,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}, true},
+    		{ 2, 2, 0, new int[][] {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,-1,1,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}, false},
+    		{ 2, 2, 0, new int[][] {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,2,1,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}, false}
     	});
     }
 
@@ -75,7 +77,12 @@ public class BoardTest extends Board {
     @Test
     public void testValid() {
     	assumeTrue(validClass);
-        assertEquals(expected, this.nextCellState(x, y));
+        try {
+        	assertEquals(expected, this.nextCellState(x, y));
+        } catch (Exception e) {
+        	fail();
+        }
+        
     }
     
     @Test

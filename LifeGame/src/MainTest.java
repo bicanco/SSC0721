@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -24,7 +25,11 @@ public class MainTest {
 		System.setIn(in);
 		System.setOut(new PrintStream(out));
 		
-		Main.main(null);
+		try {
+			Main.main(null);
+		} catch (Exception e){
+			fail();
+		}
 		
 		try { 
 			assertEquals(3, out.toString().split(System.lineSeparator()).length);
