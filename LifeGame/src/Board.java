@@ -1,5 +1,12 @@
 import java.util.Random;
 
+/*
+David Souza Rodrigues, Nº USP 4461180
+Edilson Bunicenha Junior, Nº USP 9762935
+Otávio Luis de Aguiar, Nº USP 9293518
+Oton Papa, Nº USP 9292883
+ */
+
 public class Board {
 
 	protected int boardSize = 6 ;
