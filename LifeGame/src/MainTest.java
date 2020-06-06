@@ -1,3 +1,4 @@
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -40,6 +41,7 @@ public class MainTest {
 		
 		try { 
 			String[] lines = out.toString().split(System.lineSeparator());
+			assertEquals(lines.length, 3);
 			assertTrue(Pattern.matches("((\\|(0|1)){6}\\|\\n){6}Aperte enter para a próxima geração\\.", lines[0]));
 			assertTrue(Pattern.matches("Digite \"sair\" para encerrar o programa\\.", lines[1]));
 			assertTrue(Pattern.matches("((\\|(0|1)){6}\\|\\n){6}", lines[2]));

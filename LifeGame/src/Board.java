@@ -58,7 +58,7 @@ public class Board {
 	
 	public Board nextBoardState() throws Exception {
 		int[][] newBoard = new int[boardSize][boardSize];
-
+		
 		for (int i = 0; i < boardSize; i++) {
 			for (int j = 0; j < boardSize; j++) {
 				newBoard[i][j] = nextCellState(i, j);

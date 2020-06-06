@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeFalse;
@@ -102,4 +103,12 @@ public class BoardTest extends Board {
     		assertNotNull(e);
     	}
     }
+    
+    @Test
+    public void testNextBoardState() throws Exception {
+    	assumeTrue(Arrays.deepEquals(board, new int [][] {{0,1,0,0,0,0},{1,1,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}));    		
+    	this.nextBoardState();
+   		assertFalse(Arrays.deepEquals(this.board, new int [][] {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}}));
+    }
+    
 }
